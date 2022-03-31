@@ -1,0 +1,6 @@
+framework module Pods_KEPRequestCapture_Example {
+  umbrella header "Pods-KEPRequestCapture_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

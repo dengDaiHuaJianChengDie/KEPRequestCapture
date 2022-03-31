@@ -1,0 +1,6 @@
+framework module KEPRequestCapture {
+  umbrella header "KEPRequestCapture-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,33 @@
+PODS:
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - JSONModel (1.8.0)
+  - KEPRequestCapture (1.0.0):
+    - FMDB
+    - JSONModel
+    - Masonry
+  - Masonry (1.1.0)
+
+DEPENDENCIES:
+  - KEPRequestCapture (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - FMDB
+    - JSONModel
+    - Masonry
+
+EXTERNAL SOURCES:
+  KEPRequestCapture:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
+  KEPRequestCapture: 29c9968bbe6f4dd63237c2fc68a061c99330d711
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+
+PODFILE CHECKSUM: cfd417d9cc0d347e57facf281ed4fc3aab39e5c3
+
+COCOAPODS: 1.10.1

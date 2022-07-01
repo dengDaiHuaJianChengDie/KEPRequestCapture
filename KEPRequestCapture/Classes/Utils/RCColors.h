@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, class, readonly) UIColor *HTTPCodeServerError;
 @property (nonatomic, strong, class, readonly) UIColor *HTTPCodeGeneric;
 
-+ (UIColor *)colorWithHexString:(NSString *)hexString;
++ (UIColor *)rc_colorWithHexString:(NSString *)hexString;
 
 @end
 

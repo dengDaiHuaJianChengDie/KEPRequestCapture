@@ -187,7 +187,7 @@
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
-        _collectionView.backgroundColor = [RCColors colorWithHexString:@"#FAFAFA"];
+        _collectionView.backgroundColor = [RCColors rc_colorWithHexString:@"#FAFAFA"];
         [_collectionView registerClass:[RCRequestCell class] forCellWithReuseIdentifier:NSStringFromClass([RCRequestCell class])];
     }
     return _collectionView;

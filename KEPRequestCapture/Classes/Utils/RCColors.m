@@ -19,58 +19,58 @@ CGFloat rc_colorComponentFrom(NSString *string, NSUInteger start, NSUInteger len
 @implementation RCColors
 
 + (UIColor *)HTTPCodeSuccess {
-    return [self colorWithHexString:@"#297E4C"]; //2xx
+    return [self rc_colorWithHexString:@"#297E4C"]; //2xx
 }
 
 + (UIColor *)HTTPCodeRedirect {
-    return [self colorWithHexString:@"#3D4140"]; //3xx
+    return [self rc_colorWithHexString:@"#3D4140"]; //3xx
 }
 
 + (UIColor *)HTTPCodeClientError {
-    return [self colorWithHexString:@"#D97853"]; //4xx
+    return [self rc_colorWithHexString:@"#D97853"]; //4xx
 }
 
 + (UIColor *)HTTPCodeServerError {
-    return [self colorWithHexString:@"#D32C58"]; //5xx
+    return [self rc_colorWithHexString:@"#D32C58"]; //5xx
 }
 
 + (UIColor *)HTTPCodeGeneric {
-    return [self colorWithHexString:@"#999999"]; //Others
+    return [self rc_colorWithHexString:@"#999999"]; //Others
 }
 
 + (UIColor *)uiWordsInEvidence {
-    return [self colorWithHexString:@"#dadfe1"];
+    return [self rc_colorWithHexString:@"#dadfe1"];
 }
 
 + (UIColor *)uiWordFocus {
-    return [self colorWithHexString:@"#f7ca18"];
+    return [self rc_colorWithHexString:@"#f7ca18"];
 }
 
 + (UIColor *)drayDarkestGray {
-    return [self colorWithHexString:@"#666666"];
+    return [self rc_colorWithHexString:@"#666666"];
 }
 
 + (UIColor *)drayDarkerGray {
-    return [self colorWithHexString:@"#888888"];
+    return [self rc_colorWithHexString:@"#888888"];
 }
 
 + (UIColor *)drayDarkGray {
-    return [self colorWithHexString:@"#999999"];
+    return [self rc_colorWithHexString:@"#999999"];
 }
 
 + (UIColor *)drayMidGray {
-    return [self colorWithHexString:@"#BBBBBB"];
+    return [self rc_colorWithHexString:@"#BBBBBB"];
 }
 
 + (UIColor *)drayLightGray {
-    return [self colorWithHexString:@"#CCCCCC"];
+    return [self rc_colorWithHexString:@"#CCCCCC"];
 }
 
 + (UIColor *)drayLighestGray {
-    return [self colorWithHexString:@"#E7E7E7"];
+    return [self rc_colorWithHexString:@"#E7E7E7"];
 }
 
-+ (UIColor *)colorWithHexString:(NSString *)hexString {
++ (UIColor *)rc_colorWithHexString:(NSString *)hexString {
     CGFloat alpha, red, blue, green;
     
     NSString *colorString = [[hexString stringByReplacingOccurrencesOfString:@"#" withString:@""] uppercaseString];

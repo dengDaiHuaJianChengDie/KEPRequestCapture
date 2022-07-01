@@ -6,6 +6,7 @@
 //
 
 #import "FMDatabase+RC.h"
+#import "FMDatabaseAdditions.h"
 #import <objc/runtime.h>
 
 @implementation FMDatabase (RC)

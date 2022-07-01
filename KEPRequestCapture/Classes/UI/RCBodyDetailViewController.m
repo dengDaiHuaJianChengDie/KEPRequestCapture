@@ -255,7 +255,7 @@
 - (UIView *)toolBar {
     if (!_toolBar) {
         _toolBar = [[UIView alloc] init];
-        _toolBar.backgroundColor = [RCColors colorWithHexString:@"#E8E8E8"];
+        _toolBar.backgroundColor = [RCColors rc_colorWithHexString:@"#E8E8E8"];
     }
     return _toolBar;
 }
@@ -286,7 +286,7 @@
     if (!_labelWordFinded) {
         _labelWordFinded = [[UILabel alloc] init];
         _labelWordFinded.text = @"0 of 0";
-        _labelWordFinded.textColor = [RCColors colorWithHexString:@"#333333"];
+        _labelWordFinded.textColor = [RCColors rc_colorWithHexString:@"#333333"];
         _labelWordFinded.textAlignment = NSTextAlignmentCenter;
     }
     return _labelWordFinded;

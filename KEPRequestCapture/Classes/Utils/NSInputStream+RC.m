@@ -10,7 +10,7 @@
 
 @implementation NSInputStream (RC)
 
-- (NSData *)readfully {
+- (NSData *)rc_readfully {
     NSMutableData *result = [NSMutableData data];
     uint8_t buffer[4096] = {0};
     

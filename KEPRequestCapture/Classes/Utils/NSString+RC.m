@@ -10,14 +10,14 @@
 
 @implementation NSString (RC)
 
-- (NSString *)prettyPrintedJSON {
+- (NSString *)rc_prettyPrintedJSON {
     NSData *stringData = [self dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *jsonString = [self responseJSONFromData:stringData];
+    NSString *jsonString = [self rc_responseJSONFromData:stringData];
     [jsonString stringByReplacingOccurrencesOfString:@"\\/" withString:@"/"];
     return jsonString;
 }
 
-- (NSString *)responseJSONFromData:(NSData *)data {
+- (NSString *)rc_responseJSONFromData:(NSData *)data {
     if (data == nil) return nil;
     NSError *error = nil;
     id returnValue = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
@@ -35,7 +35,7 @@
     return jsonString;
 }
 
-+ (NSString *)formattedMilliseconds:(double)rounded {
++ (NSString *)rc_formattedMilliseconds:(double)rounded {
     if (rounded < 1000) {
         return [NSString stringWithFormat:@"%zdms", (long)rounded];
     } else if (rounded < 1000 * 60) {

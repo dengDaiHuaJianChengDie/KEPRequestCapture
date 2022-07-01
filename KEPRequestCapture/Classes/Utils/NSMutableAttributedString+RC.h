@@ -13,11 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSMutableAttributedString (RC)
 
-- (NSMutableAttributedString *)bold:(NSString *)text;
+- (NSMutableAttributedString *)rc_bold:(NSString *)text;
 
-- (NSMutableAttributedString *)normal:(NSString *)text;
+- (NSMutableAttributedString *)rc_normal:(NSString *)text;
 
-- (NSMutableAttributedString *)chageTextColor:(UIColor *)toColor;
+- (NSMutableAttributedString *)rc_chageTextColor:(UIColor *)toColor;
 
 @end
 

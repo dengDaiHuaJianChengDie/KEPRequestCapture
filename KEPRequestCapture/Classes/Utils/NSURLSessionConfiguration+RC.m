@@ -13,26 +13,27 @@
 @implementation NSURLSessionConfiguration (RC)
 
 + (void)load{
-#ifdef DEBUG
+#if DEBUG || TEST_DEBUG
     NSLog(@"RC - NSURLSessionConfiguration Load");
-    [[self class] rc_swizzleClassMethodWithOriginSel:@selector(defaultSessionConfiguration) swizzledSel:@selector(wormholy_defaultSessionConfiguration)];
-    [[self class] rc_swizzleClassMethodWithOriginSel:@selector(ephemeralSessionConfiguration) swizzledSel:@selector(wormholy_ephemeralSessionConfiguration)];
+    [[self class] rc_swizzleClassMethodWithOriginSel:@selector(defaultSessionConfiguration) swizzledSel:@selector(rc_defaultSessionConfiguration)];
+    [[self class] rc_swizzleClassMethodWithOriginSel:@selector(ephemeralSessionConfiguration) swizzledSel:@selector(rc_ephemeralSessionConfiguration)];
 #endif
 }
 
-+ (NSURLSessionConfiguration *)wormholy_defaultSessionConfiguration{
-    NSURLSessionConfiguration *configuration = [self wormholy_defaultSessionConfiguration];
-    [configuration addDoraemonNSURLProtocol];
++ (NSURLSessionConfiguration *)rc_defaultSessionConfiguration{
+    NSURLSessionConfiguration *configuration = [self rc_defaultSessionConfiguration];
+    [configuration rc_addDoraemonNSURLProtocol];
     return configuration;
 }
 
-+ (NSURLSessionConfiguration *)wormholy_ephemeralSessionConfiguration{
-    NSURLSessionConfiguration *configuration = [self wormholy_ephemeralSessionConfiguration];
-    [configuration addDoraemonNSURLProtocol];
++ (NSURLSessionConfiguration *)rc_ephemeralSessionConfiguration{
+    NSURLSessionConfiguration *configuration = [self rc_ephemeralSessionConfiguration];
+    [configuration rc_addDoraemonNSURLProtocol];
     return configuration;
 }
 
-- (void)addDoraemonNSURLProtocol {
+- (void)rc_addDoraemonNSURLProtocol {
+    NSLog(@"RC - NSURLSessionConfiguration addDoraemonNSURLProtocol");
     if ([self respondsToSelector:@selector(protocolClasses)]
         && [self respondsToSelector:@selector(setProtocolClasses:)]) {
         NSMutableArray * urlProtocolClasses = [NSMutableArray arrayWithArray: self.protocolClasses];

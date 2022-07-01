@@ -104,7 +104,7 @@ static NSArray<NSString *> *_ignoredHosts;
         return request.HTTPBody;
     }
     
-    return [request.HTTPBodyStream readfully];
+    return [request.HTTPBodyStream rc_readfully];
 }
 
 #pragma mark - URLSessionDataDelegate

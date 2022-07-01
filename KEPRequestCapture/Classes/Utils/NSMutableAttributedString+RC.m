@@ -10,21 +10,21 @@
 
 @implementation NSMutableAttributedString (RC)
 
-- (NSMutableAttributedString *)bold:(NSString *)text {
+- (NSMutableAttributedString *)rc_bold:(NSString *)text {
     NSDictionary *attrs = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:15]};
     NSMutableAttributedString *boldString = [[NSMutableAttributedString alloc] initWithString:text attributes:attrs];
     [self appendAttributedString:boldString];
     return self;
 }
 
-- (NSMutableAttributedString *)normal:(NSString *)text {
+- (NSMutableAttributedString *)rc_normal:(NSString *)text {
     NSDictionary *attrs = @{NSFontAttributeName: [UIFont systemFontOfSize:14]};
     NSMutableAttributedString *normal = [[NSMutableAttributedString alloc] initWithString:text attributes:attrs];
     [self appendAttributedString:normal];
     return self;
 }
 
-- (NSMutableAttributedString *)chageTextColor:(UIColor *)toColor {
+- (NSMutableAttributedString *)rc_chageTextColor:(UIColor *)toColor {
     NSRange range = NSMakeRange(0, self.string.length);
     [self addAttributes:@{NSForegroundColorAttributeName: toColor} range:range];
     return self;

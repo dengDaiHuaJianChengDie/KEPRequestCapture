@@ -115,13 +115,13 @@
         case RCSectionTypeOverview:
         {
             RCTextTableViewCell *cell = (RCTextTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"RCTextTableViewCell" forIndexPath:indexPath];
-            cell.textView.attributedText = [[RCRequestModelBeautifier overview:self.request] chageTextColor:self.labelTextColor];
+            cell.textView.attributedText = [[RCRequestModelBeautifier overview:self.request] rc_chageTextColor:self.labelTextColor];
             return cell;
         }
         case RCSectionTypeRequestHeader:
         {
             RCTextTableViewCell *cell = (RCTextTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"RCTextTableViewCell" forIndexPath:indexPath];
-            cell.textView.attributedText = [[RCRequestModelBeautifier header:self.request.headers] chageTextColor:self.labelTextColor];
+            cell.textView.attributedText = [[RCRequestModelBeautifier header:self.request.headers] rc_chageTextColor:self.labelTextColor];
             return cell;
         }
         case RCSectionTypeRequestBody:
@@ -133,7 +133,7 @@
         case RCSectionTypeResponseHeader:
         {
             RCTextTableViewCell *cell = (RCTextTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"RCTextTableViewCell" forIndexPath:indexPath];
-            cell.textView.attributedText = [[RCRequestModelBeautifier header:self.request.responseHeaders] chageTextColor:self.labelTextColor];
+            cell.textView.attributedText = [[RCRequestModelBeautifier header:self.request.responseHeaders] rc_chageTextColor:self.labelTextColor];
             return cell;
         }
         case RCSectionTypeResponseBody:
@@ -172,7 +172,7 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _tableView.backgroundColor = [RCColors colorWithHexString:@"#E8E8E8"];
+        _tableView.backgroundColor = [RCColors rc_colorWithHexString:@"#E8E8E8"];
     }
     return _tableView;
 }

@@ -15,14 +15,14 @@
 @implementation RCRequestModelBeautifier
 
 + (NSMutableAttributedString *)overview:(RCRequestModel *)request {
-    NSMutableAttributedString *url = [[[[NSMutableAttributedString alloc] init] bold:@"URL "] normal:[NSString stringWithFormat:@"%@\n", request.url]];
-    NSMutableAttributedString *method = [[[[NSMutableAttributedString alloc] init] bold:@"Method "] normal:[NSString stringWithFormat:@"%@\n", request.method]];
+    NSMutableAttributedString *url = [[[[NSMutableAttributedString alloc] init] rc_bold:@"URL "] rc_normal:[NSString stringWithFormat:@"%@\n", request.url]];
+    NSMutableAttributedString *method = [[[[NSMutableAttributedString alloc] init] rc_bold:@"Method "] rc_normal:[NSString stringWithFormat:@"%@\n", request.method]];
     NSString *codeString = @"-";
     if (request.code != 0) {
         codeString = [NSString stringWithFormat:@"%zd", request.code];
     }
     
-    NSMutableAttributedString *responseCode = [[[[NSMutableAttributedString alloc] init] bold:@"Response Code "] normal:[NSString stringWithFormat:@"%@\n", codeString]];
+    NSMutableAttributedString *responseCode = [[[[NSMutableAttributedString alloc] init] rc_bold:@"Response Code "] rc_normal:[NSString stringWithFormat:@"%@\n", codeString]];
     
     
     NSString *requestStartTimeString = [self stringWithDate:request.date];
@@ -30,14 +30,14 @@
         requestStartTimeString = @"-";
     }
 
-    NSMutableAttributedString *requestStartTime = [[[[NSMutableAttributedString alloc] init] bold:@"Request Start Time "] normal:[NSString stringWithFormat:@"%@\n", requestStartTimeString]];
+    NSMutableAttributedString *requestStartTime = [[[[NSMutableAttributedString alloc] init] rc_bold:@"Request Start Time "] rc_normal:[NSString stringWithFormat:@"%@\n", requestStartTimeString]];
     
-    NSString *durationString = [NSString formattedMilliseconds:request.duration];
+    NSString *durationString = [NSString rc_formattedMilliseconds:request.duration];
     if (durationString.length == 0) {
         durationString = @"-";
     }
     
-    NSMutableAttributedString *duration = [[[[NSMutableAttributedString alloc] init] bold:@"Duration "] normal:[NSString stringWithFormat:@"%@\n", durationString]];
+    NSMutableAttributedString *duration = [[[[NSMutableAttributedString alloc] init] rc_bold:@"Duration "] rc_normal:[NSString stringWithFormat:@"%@\n", durationString]];
     
     NSMutableAttributedString *final = [[NSMutableAttributedString alloc] init];
     [final appendAttributedString:url];
@@ -73,7 +73,7 @@
     NSMutableAttributedString *final = [[NSMutableAttributedString alloc] init];
     
     [headers enumerateKeysAndObjectsWithOptions:NSEnumerationReverse usingBlock:^(NSString * _Nonnull key, NSString * _Nonnull obj, BOOL * _Nonnull stop) {
-        NSMutableAttributedString *tmp = [[[[NSMutableAttributedString alloc] init] bold:key] normal:[NSString stringWithFormat:@" %@\n", obj]];
+        NSMutableAttributedString *tmp = [[[[NSMutableAttributedString alloc] init] rc_bold:key] rc_normal:[NSString stringWithFormat:@" %@\n", obj]];
         [final appendAttributedString:tmp];
     }];
     
@@ -90,7 +90,7 @@
         bodyString = [bodyString substringToIndex:splitLength];
     }
     
-    NSString *pretty = [bodyString prettyPrintedJSON];
+    NSString *pretty = [bodyString rc_prettyPrintedJSON];
     if (pretty.length > 0) {
         return pretty;
     }

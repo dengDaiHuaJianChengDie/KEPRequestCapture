@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIViewController (RC)
 
-+ (nullable UIViewController *)currentViewController:(nullable UIViewController *)viewController;
++ (nullable UIViewController *)rc_currentViewController:(nullable UIViewController *)viewController;
 
 - (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event;
 

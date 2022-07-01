@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSDictionary (RC)
 
-- (NSString *)prettyPrintedJSON;
+- (NSString *)rc_prettyPrintedJSON;
 
 @end
 

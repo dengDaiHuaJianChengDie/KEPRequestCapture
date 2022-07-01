@@ -5,7 +5,7 @@
 //  Created by zhen li on 2022/1/11.
 //
 
-@import FMDB;
+#import "FMDatabase.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

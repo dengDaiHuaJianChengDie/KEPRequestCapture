@@ -17,17 +17,17 @@
     Method originAddObserverMethod = class_getClassMethod(cls, oriSel);
     Method swizzledAddObserverMethod = class_getClassMethod(cls, swiSel);
     
-    [self swizzleMethodWithOriginSel:oriSel oriMethod:originAddObserverMethod swizzledSel:swiSel swizzledMethod:swizzledAddObserverMethod class:cls];
+    [self rc_swizzleMethodWithOriginSel:oriSel oriMethod:originAddObserverMethod swizzledSel:swiSel swizzledMethod:swizzledAddObserverMethod class:cls];
 }
 
 + (void)rc_swizzleInstanceMethodWithOriginSel:(SEL)oriSel swizzledSel:(SEL)swiSel {
     Method originAddObserverMethod = class_getInstanceMethod(self, oriSel);
     Method swizzledAddObserverMethod = class_getInstanceMethod(self, swiSel);
     
-    [self swizzleMethodWithOriginSel:oriSel oriMethod:originAddObserverMethod swizzledSel:swiSel swizzledMethod:swizzledAddObserverMethod class:self];
+    [self rc_swizzleMethodWithOriginSel:oriSel oriMethod:originAddObserverMethod swizzledSel:swiSel swizzledMethod:swizzledAddObserverMethod class:self];
 }
 
-+ (void)swizzleMethodWithOriginSel:(SEL)oriSel
++ (void)rc_swizzleMethodWithOriginSel:(SEL)oriSel
                          oriMethod:(Method)oriMethod
                        swizzledSel:(SEL)swizzledSel
                     swizzledMethod:(Method)swizzledMethod

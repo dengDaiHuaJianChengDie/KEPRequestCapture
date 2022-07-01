@@ -40,7 +40,7 @@
     if (!_actionLabel) {
         _actionLabel = [[UILabel alloc] init];
         _actionLabel.font = [UIFont boldSystemFontOfSize:20];
-        _actionLabel.textColor = [RCColors colorWithHexString:@"#58BFBF"];
+        _actionLabel.textColor = [RCColors rc_colorWithHexString:@"#58BFBF"];
         _actionLabel.textAlignment = NSTextAlignmentCenter;
     }
     return _actionLabel;

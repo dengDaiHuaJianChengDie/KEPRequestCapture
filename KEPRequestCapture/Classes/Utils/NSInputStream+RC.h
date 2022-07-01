@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSInputStream (RC)
 
-- (NSData *)readfully;
+- (NSData *)rc_readfully;
 
 @end
 

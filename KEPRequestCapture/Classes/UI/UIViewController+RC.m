@@ -11,7 +11,7 @@
 
 @implementation UIViewController (RC)
 
-+ (nullable UIViewController *)currentViewController:(nullable UIViewController *)viewController {
++ (nullable UIViewController *)rc_currentViewController:(nullable UIViewController *)viewController {
     if (viewController == nil) {
         viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
         if (viewController == nil) {
@@ -22,19 +22,19 @@
     if ([viewController isKindOfClass:UINavigationController.class]) {
         UINavigationController *naviVC = (UINavigationController *)viewController;
         if (naviVC.visibleViewController) {
-            return [self currentViewController:naviVC.visibleViewController];
+            return [self rc_currentViewController:naviVC.visibleViewController];
         } else {
-            return [self currentViewController:naviVC.topViewController];
+            return [self rc_currentViewController:naviVC.topViewController];
         }
     } else if ([viewController isKindOfClass:UITabBarController.class]) {
         UITabBarController *tabBarVC = (UITabBarController *)viewController;
         if (tabBarVC.viewControllers.count > 5 && tabBarVC.selectedIndex >= 4) {
-            return [self currentViewController:tabBarVC.moreNavigationController];
+            return [self rc_currentViewController:tabBarVC.moreNavigationController];
         } else {
-            return [self currentViewController:tabBarVC.selectedViewController];
+            return [self rc_currentViewController:tabBarVC.selectedViewController];
         }
     } else if (viewController.presentedViewController) {
-        return [self currentViewController:viewController.presentedViewController];
+        return [self rc_currentViewController:viewController.presentedViewController];
     } else if (viewController.childViewControllers.count > 0) {
         return viewController.childViewControllers.firstObject;
     } else {

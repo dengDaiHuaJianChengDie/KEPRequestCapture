@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (RC)
 
-- (NSString *)prettyPrintedJSON;
-+ (NSString *)formattedMilliseconds:(double)rounded;
+- (NSString *)rc_prettyPrintedJSON;
++ (NSString *)rc_formattedMilliseconds:(double)rounded;
 
 @end
 

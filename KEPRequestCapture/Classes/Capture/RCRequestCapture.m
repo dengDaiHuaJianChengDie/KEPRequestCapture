@@ -19,11 +19,12 @@ static BOOL rc_shakeEnabled = YES;
 @implementation RCRequestCapture
 
 + (void)load {
+#if DEBUG || TEST_DEBUG
+    NSLog(@"RC - RCRequestCapture Load");
     [[NSNotificationCenter defaultCenter] addObserverForName:@"wormholy_fire" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         [RCRequestCapture presentWormholyFlow];
     }];
     
-#ifdef DEBUG
     [RCRequestCapture openRequestCapture];
 #endif
 }
@@ -41,13 +42,13 @@ static BOOL rc_shakeEnabled = YES;
 #pragma mark - 展现界面
 
 + (void)presentWormholyFlow {
-    if ([[UIViewController currentViewController:nil] isKindOfClass:RCBaseViewController.class] || [[UIViewController currentViewController:nil] isKindOfClass:RCNavigationController.class]) {
+    if ([[UIViewController rc_currentViewController:nil] isKindOfClass:RCBaseViewController.class] || [[UIViewController rc_currentViewController:nil] isKindOfClass:RCNavigationController.class]) {
         return;
     }
     
     RCNavigationController *nav = [[RCNavigationController alloc] initWithRootViewController:[[RCRequestsViewController alloc] init]];
     nav.modalPresentationStyle = UIModalPresentationOverFullScreen;
-    [[UIViewController currentViewController:nil] presentViewController:nav animated:YES completion:nil];
+    [[UIViewController rc_currentViewController:nil] presentViewController:nav animated:YES completion:nil];
 }
 
 #pragma mark - 存读方法

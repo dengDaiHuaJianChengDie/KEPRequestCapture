@@ -80,13 +80,13 @@
     self.codeLabel.textColor = color;
     
     self.urlLabel.text = request.url;
-    self.durationLabel.text = [NSString formattedMilliseconds:request.duration];
+    self.durationLabel.text = [NSString rc_formattedMilliseconds:request.duration];
 }
 
 - (UILabel *)methodLabel {
     if (!_methodLabel) {
         _methodLabel = [[UILabel alloc] init];
-        _methodLabel.textColor = [RCColors colorWithHexString:@"#333333"];
+        _methodLabel.textColor = [RCColors rc_colorWithHexString:@"#333333"];
         _methodLabel.font = [UIFont boldSystemFontOfSize:15];
     }
     return _methodLabel;
@@ -108,7 +108,7 @@
     if (!_durationLabel) {
         _durationLabel = [[UILabel alloc] init];
         _durationLabel.font = [UIFont systemFontOfSize:15];
-        _durationLabel.textColor = [RCColors colorWithHexString:@"#333333"];
+        _durationLabel.textColor = [RCColors rc_colorWithHexString:@"#333333"];
     }
     return _durationLabel;
 }
@@ -117,7 +117,7 @@
     if (!_urlLabel) {
         _urlLabel = [[UILabel alloc] init];
         _urlLabel.font = [UIFont systemFontOfSize:15];
-        _urlLabel.textColor = [RCColors colorWithHexString:@"#333333"];
+        _urlLabel.textColor = [RCColors rc_colorWithHexString:@"#333333"];
         _urlLabel.numberOfLines = 3;
     }
     return _urlLabel;

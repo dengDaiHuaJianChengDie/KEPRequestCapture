@@ -14,7 +14,7 @@
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithReuseIdentifier:reuseIdentifier]) {
-        self.backgroundColor = [RCColors colorWithHexString:@"#FAFAFA"];
+        self.backgroundColor = [RCColors rc_colorWithHexString:@"#FAFAFA"];
         
         [self addSubview:self.titleLabel];
         [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -29,7 +29,7 @@
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.font = [UIFont boldSystemFontOfSize:17];
-        _titleLabel.textColor = [RCColors colorWithHexString:@"#333333"];
+        _titleLabel.textColor = [RCColors rc_colorWithHexString:@"#333333"];
     }
     return _titleLabel;
 }
